@@ -1,0 +1,44 @@
+me: # (me) IS A OBJECT ALSO CAN BE CONSIDERED AS DICTOARY AS PER MY UNDERSTANDING 
+  name: &name "Dev" # & ANCHORS AN ELEMENT NAME CAN BE DIFF FROM KEY
+  occupation: 'Developer'
+  age: !!float 19 #FORCING TO CHANGE TYPE 19.0 
+  gpa: !!str 8.23 #'8.23'
+  male: true #BOOLEAN
+  birthday: 2002-07-01 06:33:37
+  flaws: null
+  hobbies: #LIST/ARRAYS
+    - sketching
+    - singing 
+    - cooking 
+    - photography
+  photography: ['nature photography','artitectural photography']
+  firends: #FORMATS ALLOWED IN YAML FILE TO LIST OBJECTS
+   - name: eddie
+     age: 25
+   - {name: "kunal", age: 23}
+   -
+    name: dev
+    age: 19
+  description: > # > TELLS YAML TO RENDER ALL THIS TEXT IN A SINGLE LINE it will include space instead of new lines in this case nothing in this text got preserved  
+    lorem ipsum dolor sitlorem ipsum dolor sit
+    lorem ipsum dolor sitlorem ipsum dolor sit
+    lorem ipsum dolor sit
+    lorem ipsum dolor sit
+  # PRESERVED FORMATTING USING (|)
+  signature: |
+    DJ
+    developer
+  id: *name # it will render whats stored in anchor in our case "Dev";
+  # storing nad rendering the entire key value pair nad inserting it into this other objects and i could put whatever i want
+  base: &base 
+    var1: value1
+  
+  foo:
+    <<: *base # var1: value1
+    var2: value2
+
+
+
+
+
+  
